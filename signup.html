@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Sign Up</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/utility.css">
+</head>
+
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <img src="icons/logo.svg" alt="Spotify Logo" class="invert">
+        </div>
+        <div class="signup-form">
+            <h1>Sign up for Spotify</h1>
+            <form id="signupForm">
+                <div class="input-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">What should we call you?</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </form>
+            <div class="login-link">
+                <p>Have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt.js/2.4.3/bcrypt.min.js"></script> -->
+    <script src="JavaScript/auth.js"></script>
+</body>
+
+</html>

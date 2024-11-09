@@ -198,6 +198,54 @@ async function main() {
             document.querySelector(".range").getElementsByTagName("input")[0].value = 10
         }
     })
-
+    // Check if a user is logged in
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+        updateUIForLoggedInUser(loggedInUser);
+    }
 }
+
 main()
+function updateUIForLoggedInUser(user) {
+    // Hide login and signup buttons
+    const buttons = document.querySelector('.buttons');
+    if (buttons) {
+        buttons.style.display = 'none';
+    }
+
+    // Create user info container
+    const userInfo = document.createElement('div');
+    userInfo.classList.add('user-info');
+    userInfo.innerHTML = `
+        <img src="icons/user.svg" alt="User Icon" class="invert" width="30">
+        <div class="dropdown-content">
+            <button id="signOutButton">Sign Out</button>
+        </div>
+        <span>${user.username}</span>
+    `;
+
+    // Toggle dropdown on user icon click
+    userInfo.addEventListener('click', function (event) {
+        event.stopPropagation();
+        this.classList.toggle('active');
+    });
+
+    // Append user info to header
+    const header = document.querySelector('.header');
+    if (header) {
+        header.appendChild(userInfo);
+    }
+
+    // Sign-out functionality
+    document.getElementById('signOutButton').addEventListener('click', function () {
+        // Clear user data
+        localStorage.removeItem('loggedInUser');
+        // Redirect to login page
+        window.location.href = 'login.html';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function () {
+        userInfo.classList.remove('active');
+    });
+}

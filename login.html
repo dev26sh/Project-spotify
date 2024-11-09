@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Login</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/utility.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="icons/logo.svg" alt="Spotify Logo" class="invert">
+        </div>
+        <div class="login-form">
+            <h1>Log in to Spotify</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email address or username</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="loginbtn">Log In</button>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.html">Sign up for Spotify</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt.js/2.4.3/bcrypt.min.js"></script>
+    <script src="JavaScript/auth.js"></script>
+</body>
+
+</html>
